@@ -17,30 +17,35 @@
         </style>
     </head>
     <body style="font-family: monocraft; background-color: rgb(35, 12, 56); color: antiquewhite; text-align: justify; text-justify: inter-word;">
-        <a href="#colecao">Coleção</a>
-        <a href="#review">Análises</a>
-        <a href="#top">Top 5</a><br>
-        <canvas id="myCanvas" width="290" height="50" style="border:1px solid black;">
-        Sorry, your browser does not support canvas.
-        </canvas>
+        <header>
+            <canvas id="myCanvas" width="290" height="50" style="border:1px solid black;">
+            Sorry, your browser does not support canvas.
+            </canvas>
 
-        <!-- Precisa adicionar o script depois de carregar o canvas -->
-        <script>
-        
-        const c = document.getElementById("myCanvas");
-        const ctx = c.getContext("2d");
+            <!-- Precisa adicionar o script depois de carregar o canvas -->
+            <script>
+            
+            const c = document.getElementById("myCanvas");
+            const ctx = c.getContext("2d");
 
-        // Create linear gradient
-        const grad=ctx.createLinearGradient(0,0,280,0);
-        grad.addColorStop(0, "white");
-        grad.addColorStop(1, "purple");
+            // Create linear gradient
+            const grad=ctx.createLinearGradient(0,0,280,0);
+            grad.addColorStop(0, "white");
+            grad.addColorStop(1, "purple");
 
-        // Fill text with gradient
-        ctx.font = "50px Arial";
-        ctx.fillStyle = grad;
-        ctx.fillText("Outer Haven",0,40);
-        
-        </script>
+            // Fill text with gradient
+            ctx.font = "50px Arial";
+            ctx.fillStyle = grad;
+            ctx.fillText("Outer Haven",0,40);
+            
+            </script>
+        </header>
+        <nav>
+            <a href="#colecao">Coleção</a>
+            <a href="#review">Análises</a>
+            <a href="#top">Top 5</a><br>  
+        </nav>
+      
 
         <h1 name="review">Análises</h1>
         <p>Clique na imagem do jogo para abrir a review</p>
