@@ -74,12 +74,8 @@ h1, h2, h3{
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
-
-h1{
-    border: solid;
-}
-p, ul, table, pre{
-    font-family: sans-serif;
+p, ul, ol, table, pre{
+    font-family: monocraft;
     color: white;
     font-size: 12pt;
 }
