@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body style="color: antiquewhite; text-align: justify; text-justify: inter-word;">
+        <header>
+          <canvas id="myCanvas" width="290" height="50" style="border:1px solid black;">
+          Sorry, your browser does not support canvas.
+          </canvas>
+
+          <!-- Precisa adicionar o script depois de carregar o canvas -->
+          <script>
+          
+          const c = document.getElementById("myCanvas");
+          const ctx = c.getContext("2d");
+
+          // Create linear gradient
+          const grad=ctx.createLinearGradient(0,0,280,0);
+          grad.addColorStop(0, "white");
+          grad.addColorStop(1, "purple");
+
+          // Fill text with gradient
+          ctx.font = "50px Arial";
+          ctx.fillStyle = grad;
+          ctx.fillText("Outer Haven",0,40);
+          
+          </script>
+
+          <nav>
+              <a href="colecao.html">Coleção</a>
+              <a href="index.html#review">Análises</a>
+              <a href="index.html#top">Top 5</a>
+              <a href="questionario.html">Questionário</a>
+          </nav>
+        </header><br>
+        <div id="centro">
+
+        <table border="1" >
+        <tr>
+            <th height="17" align="center" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Nome&quot;}">Nome</th>
+            <th align="center" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Análise&quot;}">Análise</th>
+            <th align="center" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Fisico&quot;}">Fisico</th>
+            <th align="center" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Gênero&quot;}">Gênero</th>
+            <th align="center" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Nota&quot;}">Nota</th>
+            <th align="center" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Status&quot;}">Status</th>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Dark Souls&quot;}">Dark Souls</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ação e Aventura&quot;}">Ação e Aventura</td>
+            <td align="right" sdval="9.5" sdnum="1033;">9.5</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Killzone&quot;}">Killzone</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Call of Duty: Ghosts&quot;}">Call of Duty: Ghosts</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Analisado&quot;}">Analisado</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="right" sdval="6" sdnum="1033;">6</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Duke Nukem Forever&quot;}">Duke Nukem Forever</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Escrevendo&quot;}">Escrevendo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="right" sdval="3" sdnum="1033;">3</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Killzone 2&quot;}">Killzone 2</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Killzone 3&quot;}">Killzone 3</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;God of War&quot;}">God of War</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hack n' Slash&quot;}">Hack n' Slash</td>
+            <td align="right" sdval="9" sdnum="1033;">9</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;God of War II&quot;}">God of War II</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hack n' Slash&quot;}">Hack n' Slash</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Brave&quot;}">Brave</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Analisado&quot;}">Analisado</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ação e Aventura&quot;}">Ação e Aventura</td>
+            <td align="right" sdval="4" sdnum="1033;">4</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Heavy Rain&quot;}">Heavy Rain</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;História&quot;}">História</td>
+            <td align="right" sdval="7" sdnum="1033;">7</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hitman: Contracts&quot;}">Hitman: Contracts</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hitman: Blood Money &quot;}">Hitman: Blood Money </td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hitman 2: Silent Assassin&quot;}">Hitman 2: Silent Assassin</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Journey&quot;}">Journey</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Vibes&quot;}">Vibes</td>
+            <td align="right" sdval="6" sdnum="1033;">6</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Flower&quot;}">Flower</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Vibes&quot;}">Vibes</td>
+            <td align="right" sdval="7" sdnum="1033;">7</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Flow&quot;}">Flow</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Vibes&quot;}">Vibes</td>
+            <td align="right" sdval="6" sdnum="1033;">6</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Medieval Moves: Deadmund’s Quest&quot;}">Medieval Moves: Deadmund’s Quest</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;PS Move&quot;}">PS Move</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Jogando&quot;}">Jogando</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Skate 3&quot;}">Skate 3</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Analisado&quot;}">Analisado</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Esporte&quot;}">Esporte</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;God of War III&quot;}">God of War III</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hack n' Slash&quot;}">Hack n' Slash</td>
+            <td align="right" sdval="10" sdnum="1033;">10</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Solid 4: Guns of the Patriots&quot;}">Metal Gear Solid 4: Guns of the Patriots</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="10" sdnum="1033;">10</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Last of Us&quot;}">Last of Us</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ação e Aventura&quot;}">Ação e Aventura</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Jogando&quot;}">Jogando</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Spec Ops: The Line&quot;}">Spec Ops: The Line</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Escrevendo&quot;}">Escrevendo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yakuza 3&quot;}">Yakuza 3</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Beat 'em Up&quot;}">Beat 'em Up</td>
+            <td align="right" sdval="6" sdnum="1033;">6</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yakuza 4&quot;}">Yakuza 4</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Beat 'em Up&quot;}">Beat 'em Up</td>
+            <td align="right" sdval="7" sdnum="1033;">7</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Demon’s Souls&quot;}">Demon’s Souls</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Analisado&quot;}">Analisado</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ação e Aventura&quot;}">Ação e Aventura</td>
+            <td align="right" sdval="9" sdnum="1033;">9</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Solid&quot;}">Metal Gear Solid</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="9" sdnum="1033;">9</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Solid 2: Sons of Liberty&quot;}">Metal Gear Solid 2: Sons of Liberty</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="10" sdnum="1033;">10</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Solid 3: Snake Eater&quot;}">Metal Gear Solid 3: Snake Eater</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="9" sdnum="1033;">9</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Solid V: Ground Zeroes&quot;}">Metal Gear Solid V: Ground Zeroes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="5" sdnum="1033;">5</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Solid V: The Phantom Pain&quot;}">Metal Gear Solid V: The Phantom Pain</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="10" sdnum="1033;">10</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Rising: Revengeance&quot;}">Metal Gear Rising: Revengeance</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hack n' Slash&quot;}">Hack n' Slash</td>
+            <td align="right" sdval="9" sdnum="1033;">9</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hitman: Absolution&quot;}">Hitman: Absolution</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="7" sdnum="1033;">7</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Rayman Legends&quot;}">Rayman Legends</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Plataforma&quot;}">Plataforma</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Little Big Planet 3&quot;}">Little Big Planet 3</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Plataforma&quot;}">Plataforma</td>
+            <td align="right" sdval="9" sdnum="1033;">9</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;God of War: Ascension&quot;}">God of War: Ascension</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hack n' Slash&quot;}">Hack n' Slash</td>
+            <td align="right" sdval="7" sdnum="1033;">7</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Elder Scrolls V: Skyrim&quot;}">Elder Scrolls V: Skyrim</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ação e Aventura&quot;}">Ação e Aventura</td>
+            <td align="right" sdval="9" sdnum="1033;">9</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Metal Gear Solid: Peace Walker&quot;}">Metal Gear Solid: Peace Walker</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="8" sdnum="1033;">8</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Gran Turismo 5: Prologue&quot;}">Gran Turismo 5: Prologue</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Corrida&quot;}">Corrida</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yakuza Dead Souls&quot;}">Yakuza Dead Souls</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Beat 'em Up, Shooter&quot;}">Beat 'em Up, Shooter</td>
+            <td align="right" sdval="6" sdnum="1033;">6</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;BRINK&quot;}">BRINK</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="right" sdval="2" sdnum="1033;">2</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;FIFA 13&quot;}">FIFA 13</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Esporte&quot;}">Esporte</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Thief&quot;}">Thief</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;No&quot;}">No</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Furtivo&quot;}">Furtivo</td>
+            <td align="right" sdval="5" sdnum="1033;">5</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Mortal Kombat&quot;}">Mortal Kombat</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Luta&quot;}">Luta</td>
+            <td align="right" sdval="7" sdnum="1033;">7</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Cabela's Dangerous Hunts 2013&quot;}">Cabela's Dangerous Hunts 2013</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Crysis 3&quot;}">Crysis 3</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Shooter&quot;}">Shooter</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO Pirates of the Caribbean&quot;}">LEGO Pirates of the Caribbean</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO&quot;}">LEGO</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Gran Turismo 5&quot;}">Gran Turismo 5</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Corrida&quot;}">Corrida</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Driver: San Francisco&quot;}">Driver: San Francisco</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Corrida&quot;}">Corrida</td>
+            <td align="right" sdval="8.5" sdnum="1033;">8.5</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;L.A. Noire&quot;}">L.A. Noire</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;História&quot;}">História</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Platinado&quot;}">Platinado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Darkness II&quot;}">Darkness II</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Remember Me&quot;}">Remember Me</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO Jurassic World&quot;}">LEGO Jurassic World</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO&quot;}">LEGO</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO Lord of the Rings&quot;}">LEGO Lord of the Rings</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO&quot;}">LEGO</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO Hobbit&quot;}">LEGO Hobbit</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO&quot;}">LEGO</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO Star Wars: The Complete Saga&quot;}">LEGO Star Wars: The Complete Saga</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LEGO&quot;}">LEGO</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Tomb Raider&quot;}">Tomb Raider</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ação e Aventura&quot;}">Ação e Aventura</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Castlevania: Lords of Shadow&quot;}">Castlevania: Lords of Shadow</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hack n' Slash&quot;}">Hack n' Slash</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não jogado&quot;}">Não jogado</td>
+        </tr>
+        <tr>
+            <td height="17" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Ninja Gaiden 3&quot;}">Ninja Gaiden 3</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Aguardo&quot;}">Aguardo</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Yes&quot;}">Yes</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Hack n' Slash&quot;}">Hack n' Slash</td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;&quot;}"><br></td>
+            <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
+        </tr>
+        </table>
+    </form>
+        </div>
+        <footer>
+            <p>© 2026 Marco Rigon; Matheus Roberto</p>
+        </footer>
+
+    </body>
+</html>

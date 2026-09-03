@@ -1,52 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <style>
-            @font-face {
-                font-family: "monocraft";
-                src: url("fonts/monocraft.ttf");
-            }
-            th,td{
-                padding: 5px;
-                font-size: small;
-            }
-            tr:nth-child(even){
-                background-color: rgb(29, 0, 45);
-            }
-        </style>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body style="font-family: monocraft; background-color: rgb(35, 12, 56); color: antiquewhite; text-align: justify; text-justify: inter-word;">
+    <body style="color: antiquewhite; text-align: justify; text-justify: inter-word;">
         <header>
-            <canvas id="myCanvas" width="290" height="50" style="border:1px solid black;">
-            Sorry, your browser does not support canvas.
-            </canvas>
+          <canvas id="myCanvas" width="290" height="50" style="border:1px solid black;">
+          Sorry, your browser does not support canvas.
+          </canvas>
 
-            <!-- Precisa adicionar o script depois de carregar o canvas -->
-            <script>
-            
-            const c = document.getElementById("myCanvas");
-            const ctx = c.getContext("2d");
+          <!-- Precisa adicionar o script depois de carregar o canvas -->
+          <script>
+          
+          const c = document.getElementById("myCanvas");
+          const ctx = c.getContext("2d");
 
-            // Create linear gradient
-            const grad=ctx.createLinearGradient(0,0,280,0);
-            grad.addColorStop(0, "white");
-            grad.addColorStop(1, "purple");
+          // Create linear gradient
+          const grad=ctx.createLinearGradient(0,0,280,0);
+          grad.addColorStop(0, "white");
+          grad.addColorStop(1, "purple");
 
-            // Fill text with gradient
-            ctx.font = "50px Arial";
-            ctx.fillStyle = grad;
-            ctx.fillText("Outer Haven",0,40);
-            
-            </script>
+          // Fill text with gradient
+          ctx.font = "50px Arial";
+          ctx.fillStyle = grad;
+          ctx.fillText("Outer Haven",0,40);
+          
+          </script>
+
+          <nav>
+              <a href="colecao.html">Coleção</a>
+              <a href="index.html#review">Análises</a>
+              <a href="index.html#top">Top 5</a>
+              <a href="questionario.html">Questionário</a>
+          </nav><br>
         </header>
-        <nav>
-            <a href="#colecao">Coleção</a>
-            <a href="#review">Análises</a>
-            <a href="#top">Top 5</a>
-            <a href="questionario.html">Questionário</a>
-        </nav><br>
-  <form id="quiz-form">
+        <div id="centro">
+
+        <form id="quiz-form">
     <label for="username">Nome:</label>
     <input type="text" id="username" name="username" placeholder="Digite seu nome"><br><br>
     <label for="birthdate">Data de nascimento:</label>
@@ -206,11 +197,15 @@
       </div>
     </div><br>
 
-    <footer>
+    
       <button type="submit" class="submit-btn">DESBLOQUEAR RESULTADO</button>
-   </footer>
+   
 
-  </form>
+    </form>
+        </div>
+        <footer>
+            <p>© 2026 Marco Rigon; Matheus Roberto</p>
+        </footer>
 
     </body>
 </html>

@@ -2,6 +2,11 @@
     font-family: "monocraft";
     src: url("fonts/monocraft.ttf");
 }
+
+*{
+    font-family: monocraft;
+}
+
 /*------Mudanças em IDs-----*/
 #centro{
     max-width: 75%;
@@ -14,7 +19,7 @@
     padding-top: 20px;
     padding-bottom: 10px;
 }
-#cabecalho{
+header{
     background-color: rgb(37, 6, 43);
     position: fixed;
     height: fit-content;
@@ -25,7 +30,7 @@
     top: 0;
     left: 0;
 }
-#navegacao{
+nav{
     background-color: rgb(52, 8, 61);
     height: fit-content;
     padding-bottom: 10px;
@@ -34,9 +39,8 @@
     margin-right: auto;
     width: 90%;
     left: 0;
-    margin-top: 120px;
 }
-#rodape{
+footer{
     background-color: rgb(37, 6, 43);
     bottom: 0;
     left: 0;
@@ -46,7 +50,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
 }
-#rodape p{
+footer p{
     text-align: center;
 }
 #logo{
@@ -67,7 +71,6 @@
 
 /*------Mudanças em classes e tags------*/
 h1, h2, h3{
-    font-family: monocraft;
     font-style: italic;
 
     animation-name: sunset;
@@ -75,9 +78,16 @@ h1, h2, h3{
     animation-iteration-count: infinite;
 }
 p, ul, ol, table, pre{
-    font-family: monocraft;
     color: white;
     font-size: 12pt;
+}
+
+th,td{
+    padding: 5px;
+    font-size: small;
+}
+tr:nth-child(even){
+    background-color: rgb(29, 0, 45);
 }
 
 .galeria{
@@ -129,8 +139,12 @@ p, ul, ol, table, pre{
     height: 160px;
 }
 a:link, a:visited{
-    font-family: sans-serif;
     color: #a653f5;
+}
+a:hover{
+    animation-name: vaporwave;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
 }
 @keyframes rasmus {
 0% {transform: rotate(-10deg);}
