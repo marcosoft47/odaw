@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" type="text/css" id="css" href="style.css">
+    <script src="test.js"></script>
+</head>
+<body>
+    <button onclick="alternarCSS()" id="mudarcss">Modo Claro</button>
+    <form name="TCheck" method="post" onsubmit="return TestaVal()">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="muda" placeholder="Digite seu nome"><br><br>
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" id="sobrenome" name="muda" placeholder="Digite seu sobrenome"><br><br>
+
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" name="muda" placeholder="Digite o nome do curso"><br><br>
+        
+        <label for="turma">Turma:</label>
+        <input type="text" id="turma" name="muda" placeholder="Digite o nome da turma"><br><br>
+        
+        <label for="Opt1">Minusculo</label>
+        <input type=checkbox name="Opt1" value="1" checked 
+                            onclick="if (this.checked) { AltMinusc() } "> <br>
+        <label for="Opt2">Maiusculo</label>
+        <input type=checkbox name="Opt2" value="2" 
+                        onclick="if (this.checked) { AltMaiusc() } "> <br>
+        
+        <button type="submit" name="subB">Enviar</button>
+    </form>
+
+    <button onclick="printText()">Imprimir Texto</button>
+    <p id="bomdia"></p><br>
+</body>
+</html>

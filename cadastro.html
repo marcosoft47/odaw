@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outer Haven - Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #fa92fb; /* Rosa combinando com o tema vaporwave */
+        }
+        .form-group input {
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus {
+            border-color: #a653f5; /* Destaque roxo ao focar */
+            box-shadow: 0 0 5px rgba(166, 83, 245, 0.5);
+        }
+        .btn-submit {
+            background-color: #a653f5;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+        .btn-submit:hover {
+            background-color: #f96cff;
+            transform: translateY(-1px);
+        }
+        .btn-submit:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body style="text-align: justify; text-justify: inter-word;">
+    <header>
+        <canvas id="myCanvas" width="290" height="50" style="border:1px solid black;">
+        Sorry, your browser does not support canvas.
+        </canvas>
+
+        <!-- Script do canvas do topo -->
+        <script>
+        const c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+
+        // Create linear gradient
+        const grad=ctx.createLinearGradient(0,0,280,0);
+        grad.addColorStop(0, "white");
+        grad.addColorStop(1, "purple");
+
+        // Fill text with gradient
+        ctx.font = "50px Arial";
+        ctx.fillStyle = grad;
+        ctx.fillText("Outer Haven",0,40);
+        </script>
+
+        <nav>
+            <a href="colecao.html">Coleção</a>
+            <a href="index.html#review">Análises</a>
+            <a href="index.html#top">Top 5</a>
+            <a href="questionario.html">Questionário</a>
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+
+    <div id="centro" style="margin-top: 140px;">
+        <h1>Cadastro de Usuário</h1>
+        <p>Preencha as informações abaixo para se cadastrar. Todos os campos são obrigatórios.</p>
+
+        <form id="cadastro-form" novalidate>
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@dominio.com">
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura">
+            </div>
+
+            <div class="form-group">
+                <label for="jogo_favorito">Jogo Favorito:</label>
+                <input type="text" id="jogo_favorito" name="jogo_favorito" placeholder="Ex: Metal Gear Solid 2">
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Cadastro</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2026 Marco Rigon; Matheus Roberto</p>
+    </footer>
+
+    <script>
+        document.getElementById('cadastro-form').addEventListener('submit', function(event) {
+            // Evita o envio padrão do formulário
+            event.preventDefault();
+
+            // Captura os valores dos campos
+            const nomeVal = document.getElementById('nome').value.trim();
+            const emailVal = document.getElementById('email').value.trim();
+            const senhaVal = document.getElementById('senha').value.trim();
+            const jogoFavoritoVal = document.getElementById('jogo_favorito').value.trim();
+
+            // Lista de erros encontrados
+            const erros = [];
+
+            // Validação manual de cada campo
+            if (nomeVal === '') {
+                erros.push("O campo 'Nome Completo' é obrigatório.");
+            }
+            if (emailVal === '') {
+                erros.push("O campo 'E-mail' é obrigatório.");
+            }
+            if (senhaVal === '') {
+                erros.push("O campo 'Senha' é obrigatório.");
+            }
+            if (jogoFavoritoVal === '') {
+                erros.push("O campo 'Jogo Favorito' é obrigatório.");
+            }
+
+            // Se houver algum erro, exibe-os em um alert
+            if (erros.length > 0) {
+                // Junta os erros com quebras de linha para exibição no alert
+                alert("Erro ocorrido:\n\n" + erros.join("\n"));
+            } else {
+                // Sucesso absoluto!
+                alert("Sucesso!");
+                // Opcional: limpa o formulário após o sucesso
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>

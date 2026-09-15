@@ -5,6 +5,7 @@
 
 *{
     font-family: monocraft;
+    color: white;
 }
 
 /*------Mudanças em IDs-----*/
@@ -16,6 +17,7 @@
     margin-left: auto;
     margin-right: auto;
     padding-left: 30px;
+    padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 10px;
 }
@@ -90,6 +92,20 @@ tr:nth-child(even){
     background-color: rgb(29, 0, 45);
 }
 
+input[type=text], input[type=password], input[type=number], input[type=email], input[type=url], input[type=tel], input[type=search], textarea, select{
+    background-color: rgb(29, 0, 45);
+    color: white;
+    border: 1px solid rgb(226, 226, 226);
+    padding: 5px;
+    font-size: small;
+}
+button{
+    background-color: rgb(29, 0, 45);
+    color: white;
+    border: 1px solid rgb(226, 226, 226);
+    padding: 5px;
+    font-size: small;
+}
 .galeria{
     position: static;
     float: left;
@@ -147,9 +163,9 @@ a:hover{
     animation-iteration-count: infinite;
 }
 @keyframes rasmus {
-0% {transform: rotate(-10deg);}
-50% {transform: rotate(10deg);}
-100% {transform: rotate(-10deg);}
+    0% {transform: rotate(-10deg);}
+    50% {transform: rotate(10deg);}
+    100% {transform: rotate(-10deg);}
 }
 @keyframes rasmusmove{
     0% { transform: translateY(-2px);}

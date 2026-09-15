@@ -1,0 +1,23 @@
+:root{
+    --cor: white;
+}
+
+*{
+    color: var(--cor);
+    background-color: var(--cor);
+    border: var(--cor)
+}
+
+::placeholder{
+    color: var(--cor);
+}
+input[type="checkbox"] {
+    accent-color: var(--cor);
+    appearance: none;
+    background-color: var(--cor);
+    border: 2px solid var(--cor);
+}
+input[type="checkbox"]:checked::after{
+    content: "";
+    border: var(--cor);
+}
