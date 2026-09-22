@@ -47,6 +47,19 @@
         .btn-submit:active {
             transform: translateY(1px);
         }
+        .error-message {
+            display: none;
+            background-color: rgba(255, 0, 0, 0.08);
+            color: #b00020;
+            border: 1px solid #d32f2f;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .error-message.visible {
+            display: block;
+        }
     </style>
 </head>
 <body style="text-align: justify; text-justify: inter-word;">
@@ -85,6 +98,8 @@
         <p>Preencha as informações abaixo para se cadastrar. Todos os campos são obrigatórios.</p>
 
         <form id="cadastro-form" novalidate>
+            <div id="erro-cadastro" class="error-message" aria-live="polite"></div>
+
             <div class="form-group">
                 <label for="nome">Nome Completo:</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
@@ -113,45 +128,6 @@
         <p>© 2026 Marco Rigon; Matheus Roberto</p>
     </footer>
 
-    <script>
-        document.getElementById('cadastro-form').addEventListener('submit', function(event) {
-            // Evita o envio padrão do formulário
-            event.preventDefault();
-
-            // Captura os valores dos campos
-            const nomeVal = document.getElementById('nome').value.trim();
-            const emailVal = document.getElementById('email').value.trim();
-            const senhaVal = document.getElementById('senha').value.trim();
-            const jogoFavoritoVal = document.getElementById('jogo_favorito').value.trim();
-
-            // Lista de erros encontrados
-            const erros = [];
-
-            // Validação manual de cada campo
-            if (nomeVal === '') {
-                erros.push("O campo 'Nome Completo' é obrigatório.");
-            }
-            if (emailVal === '') {
-                erros.push("O campo 'E-mail' é obrigatório.");
-            }
-            if (senhaVal === '') {
-                erros.push("O campo 'Senha' é obrigatório.");
-            }
-            if (jogoFavoritoVal === '') {
-                erros.push("O campo 'Jogo Favorito' é obrigatório.");
-            }
-
-            // Se houver algum erro, exibe-os em um alert
-            if (erros.length > 0) {
-                // Junta os erros com quebras de linha para exibição no alert
-                alert("Erro ocorrido:\n\n" + erros.join("\n"));
-            } else {
-                // Sucesso absoluto!
-                alert("Sucesso!");
-                // Opcional: limpa o formulário após o sucesso
-                this.reset();
-            }
-        });
-    </script>
+    <script src="cadastro.js"></script>
 </body>
 </html>

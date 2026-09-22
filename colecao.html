@@ -38,6 +38,20 @@
         </header><br>
         <div id="centro">
 
+        <div class="filtros">
+            <label for="filtro-jogo">Buscar:</label>
+            <input type="search" id="filtro-jogo" placeholder="Nome, gênero ou status">
+
+            <label for="filtro-genero">Gênero:</label>
+            <select id="filtro-genero">
+                <option value="todos">Todos</option>
+            </select>
+
+            <button type="button" id="limpar-filtro">Limpar</button>
+        </div>
+
+        <p id="resultado-filtro" class="resultado-filtro">Mostrando 0 jogos.</p>
+
         <table border="1" >
         <tr>
             <th height="17" align="center" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Nome&quot;}">Nome</th>
@@ -512,11 +526,12 @@
             <td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Zerado&quot;}">Zerado</td>
         </tr>
         </table>
-    </form>
         </div>
         <footer>
             <p>© 2026 Marco Rigon; Matheus Roberto</p>
         </footer>
+
+        <script src="colecao.js" defer></script>
 
     </body>
 </html>

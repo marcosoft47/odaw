@@ -105,7 +105,73 @@ button{
     border: 1px solid rgb(226, 226, 226);
     padding: 5px;
     font-size: small;
+    cursor: pointer;
 }
+.filtros{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(29, 0, 45, 0.5);
+}
+.filtros label{
+    font-size: 11pt;
+}
+#filtro-jogo,
+#filtro-genero{
+    min-width: 180px;
+}
+.resultado-filtro{
+    margin: 0 0 15px 0;
+    font-size: 11pt;
+    color: #d8c2ff;
+}
+
+.form-group {
+margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+}
+.form-group label {
+margin-bottom: 8px;
+font-weight: bold;
+color: #fa92fb; /* Rosa combinando com o tema vaporwave */
+}
+.form-group input {
+font-size: 14px;
+padding: 8px 12px;
+border-radius: 4px;
+outline: none;
+transition: border-color 0.3s ease;
+}
+.form-group input:focus {
+border-color: #a653f5; /* Destaque roxo ao focar */
+box-shadow: 0 0 5px rgba(166, 83, 245, 0.5);
+}
+.btn-submit {
+background-color: #a653f5;
+color: white;
+font-size: 16px;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-weight: bold;
+width: 100%;
+margin-top: 10px;
+transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.btn-submit:hover {
+background-color: #f96cff;
+transform: translateY(-1px);
+}
+.btn-submit:active {
+transform: translateY(1px);
+}
+
 .galeria{
     position: static;
     float: left;
