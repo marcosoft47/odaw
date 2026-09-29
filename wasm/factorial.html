@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fatorial com WebAssembly</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f2f4ef;
+      color: #1b3029;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background-image: linear-gradient(135deg, transparent 49.8%, #dfe6dc 50%, transparent 50.2%);
+      background-size: 28px 28px;
+    }
+
+    main {
+      width: min(100%, 680px);
+      padding: clamp(24px, 7vw, 42px);
+      border: 1px solid #c9d2c7;
+      border-top: 5px solid #167653;
+      background: #fbfcf8;
+      box-shadow: 10px 10px 0 #dce4d8;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #167653;
+      font: 700 12px/1.4 Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    h1 { margin: 0; font-size: 36px; line-height: 1.1; }
+
+    p { line-height: 1.55; }
+
+    form { display: grid; gap: 12px; margin-top: 24px; }
+
+    .calculator-results, .benchmark-results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .result-panel {
+      min-width: 0;
+      padding: 14px;
+      border-left: 3px solid #167653;
+      background: #edf2eb;
+    }
+
+    .result-panel h2 {
+      margin: 0 0 8px;
+      font: 700 12px/1.4 Arial, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .result-panel p {
+      min-height: 26px;
+      margin: 0;
+      overflow-wrap: anywhere;
+      color: #145e43;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    section { margin-top: 34px; padding-top: 24px; border-top: 1px solid #c9d2c7; }
+
+    section h2 { margin: 0; font-size: 24px; }
+
+    .benchmark-form { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+
+    .benchmark-form label { grid-column: 1 / -1; }
+
+    .benchmark-form button { width: auto; min-width: 190px; padding: 0 18px; }
+
+    .note { color: #52665a; font: 13px/1.5 Arial, sans-serif; }
+
+    label { font: 700 14px/1.4 Arial, sans-serif; }
+
+    input, button {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid #82978a;
+      border-radius: 3px;
+      font: 16px Arial, sans-serif;
+    }
+
+    input { padding: 0 12px; background: #fff; color: inherit; }
+
+    button {
+      border-color: #145e43;
+      background: #167653;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:disabled { opacity: 0.55; cursor: wait; }
+
+    #status { margin-bottom: 0; color: #52665a; font: 13px/1.5 Arial, sans-serif; }
+
+    @media (max-width: 520px) {
+      .calculator-results, .benchmark-results { grid-template-columns: 1fr; }
+      .benchmark-form { grid-template-columns: 1fr; }
+      .benchmark-form button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">C++ e JavaScript no navegador</p>
+    <h1>Calculadora de fatorial</h1>
+    <p>Compare o mesmo cálculo em JavaScript e em C++ compilado para WebAssembly.</p>
+
+    <form id="factorial-form">
+      <label for="number">Número</label>
+      <input id="number" type="number" min="0" max="20" step="1" value="5" required>
+      <button id="calculate" type="submit" disabled>Carregando WebAssembly...</button>
+    </form>
+
+    <div class="calculator-results" aria-live="polite">
+      <div class="result-panel">
+        <h2>JavaScript</h2>
+        <p id="js-result">-</p>
+      </div>
+      <div class="result-panel">
+        <h2>WebAssembly</h2>
+        <p id="wasm-result">-</p>
+      </div>
+    </div>
+
+    <section aria-labelledby="benchmark-title">
+      <h2 id="benchmark-title">Teste de desempenho</h2>
+      <p>Executa um lote de fatoriais de 10 a 14 em cada tecnologia e compara o tempo.</p>
+      <form id="benchmark-form" class="benchmark-form">
+        <label for="iterations">Operações por rodada</label>
+        <input id="iterations" type="number" min="10000" max="10000000" step="10000" value="1000000" required>
+        <button id="benchmark" type="submit" disabled>Comparar desempenho</button>
+      </form>
+      <div class="benchmark-results" aria-live="polite">
+        <div class="result-panel">
+          <h2>JavaScript</h2>
+          <p id="js-time">-</p>
+        </div>
+        <div class="result-panel">
+          <h2>WebAssembly</h2>
+          <p id="wasm-time">-</p>
+        </div>
+      </div>
+      <p id="comparison" class="note" aria-live="polite"></p>
+      <p class="note">O tempo mede o lote dentro de cada runtime; inicialização, DOM e renderização não entram na medição.</p>
+    </section>
+
+    <p id="status" role="status">Inicializando o módulo...</p>
+  </main>
+
+  <script>
+    const form = document.querySelector("#factorial-form");
+    const input = document.querySelector("#number");
+    const button = document.querySelector("#calculate");
+    const jsResult = document.querySelector("#js-result");
+    const wasmResult = document.querySelector("#wasm-result");
+    const status = document.querySelector("#status");
+    const benchmarkForm = document.querySelector("#benchmark-form");
+    const iterationsInput = document.querySelector("#iterations");
+    const benchmarkButton = document.querySelector("#benchmark");
+    const jsTime = document.querySelector("#js-time");
+    const wasmTime = document.querySelector("#wasm-time");
+    const comparison = document.querySelector("#comparison");
+
+    function factorialJavaScript(number) {
+      let result = 1n;
+      for (let factor = 2n; factor <= BigInt(number); factor += 1n) {
+        result *= factor;
+      }
+      return result;
+    }
+
+    function benchmarkJavaScript(iterations) {
+      const modulus = 1000000007;
+      let checksum = 0;
+      for (let iteration = 0; iteration < iterations; iteration += 1) {
+        const number = 10 + iteration % 5;
+        let factorial = 1;
+        for (let factor = 2; factor <= number; factor += 1) {
+          factorial *= factor;
+        }
+        checksum = (checksum + factorial) % modulus;
+      }
+      return checksum;
+    }
+
+    function median(values) {
+      const sorted = [...values].sort((first, second) => first - second);
+      return sorted[Math.floor(sorted.length / 2)];
+    }
+
+    function measure(operation) {
+      const start = performance.now();
+      const checksum = operation();
+      return { milliseconds: performance.now() - start, checksum };
+    }
+
+    var Module = {
+      onRuntimeInitialized() {
+        button.disabled = false;
+        button.textContent = "Calcular fatorial";
+        benchmarkButton.disabled = false;
+        status.textContent = "Módulo WebAssembly pronto.";
+      }
+    };
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const number = Number(input.value);
+
+      if (!Number.isInteger(number) || number < 0 || number > 20) {
+        jsResult.textContent = "Valor inválido";
+        wasmResult.textContent = "Valor inválido";
+        return;
+      }
+
+      jsResult.textContent = `${number}! = ${factorialJavaScript(number).toString()}`;
+      wasmResult.textContent = `${number}! = ${Module._factorial(number).toString()}`;
+    });
+
+    benchmarkForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const iterations = Number(iterationsInput.value);
+      if (!Number.isInteger(iterations) || iterations < 10000 || iterations > 10000000) {
+        comparison.textContent = "Informe entre 10.000 e 10.000.000 operações.";
+        return;
+      }
+
+      benchmarkButton.disabled = true;
+      benchmarkButton.textContent = "Executando...";
+      comparison.textContent = "Aquecendo os runtimes e medindo...";
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+
+      benchmarkJavaScript(iterations);
+      Module._benchmark_factorial(iterations);
+
+      const javascriptSamples = [];
+      const wasmSamples = [];
+      let matchingChecksums = true;
+      for (let round = 0; round < 5; round += 1) {
+        const first = round % 2 === 0
+          ? measure(() => benchmarkJavaScript(iterations))
+          : measure(() => Module._benchmark_factorial(iterations));
+        const second = round % 2 === 0
+          ? measure(() => Module._benchmark_factorial(iterations))
+          : measure(() => benchmarkJavaScript(iterations));
+
+        const jsSample = round % 2 === 0 ? first : second;
+        const wasmSample = round % 2 === 0 ? second : first;
+        javascriptSamples.push(jsSample.milliseconds);
+        wasmSamples.push(wasmSample.milliseconds);
+        matchingChecksums &&= jsSample.checksum === wasmSample.checksum;
+      }
+
+      const jsMedian = median(javascriptSamples);
+      const wasmMedian = median(wasmSamples);
+      jsTime.textContent = `${jsMedian.toFixed(2)} ms`;
+      wasmTime.textContent = `${wasmMedian.toFixed(2)} ms`;
+      const ratio = Math.max(jsMedian, wasmMedian) / Math.max(Math.min(jsMedian, wasmMedian), 0.001);
+      comparison.textContent = `${wasmMedian < jsMedian ? "WASM" : "JavaScript"} foi ${ratio.toFixed(2)}x mais rápido nesta execução. ${matchingChecksums ? "Checksums conferem." : "Atenção: os resultados divergem."}`;
+      benchmarkButton.disabled = false;
+      benchmarkButton.textContent = "Comparar desempenho";
+    });
+  </script>
+  <script src="factorial-browser.js"></script>
+</body>
+</html>
